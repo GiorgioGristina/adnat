@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_24_110532) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_24_112002) do
+  create_table "employments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "organisation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organisation_id"], name: "index_employments_on_organisation_id"
+    t.index ["user_id"], name: "index_employments_on_user_id"
+  end
+
   create_table "organisations", force: :cascade do |t|
     t.string "name"
     t.float "hourly_rate"
@@ -31,4 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_24_110532) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "employments", "organisations"
+  add_foreign_key "employments", "users"
 end
