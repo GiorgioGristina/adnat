@@ -8,7 +8,6 @@ class EmploymentsController < ApplicationController
 
     else
       render "organisations/index", status: :unprocessable_entity
-      # render :controller => 'organisations', :action => 'index'
     end
   end
 

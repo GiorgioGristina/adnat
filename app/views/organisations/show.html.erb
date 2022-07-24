@@ -1,0 +1,39 @@
+<h1><%= @organisation.name %><h1>
+
+<p>Shifts</p>
+
+<table>
+  <tr>
+    <th>Employ name</th>
+    <th>Shift date</td>      
+    <th>Start Time</th>
+    <th>Finish Time</th>      
+    <th>Break length (minutes)</th>
+    <th>Hours worked</th>      
+    <th>Shift cost</th>                    
+  </tr>
+  <% @shifts.each do |shift| %>
+    <tr>
+      <td><%= shift.user.full_name %></td>
+      <td><%= shift.get_date %></td>      
+      <td><%= shift.get_start_time %></td>      
+      <td><%= shift.get_finish_time %></td>
+      <td><%= shift.break %></td>      
+      <td><%= shift.hours_worked %></td>
+      <td><%= shift.shift_cost.round(2) %></td>                        
+    </tr>   
+  <% end %>
+
+  <tr>
+    <%= form_for([@organisation, @shift]) do |f| %>
+      <td><%= current_user.full_name %></td>
+      <td><%= f.date_field :start_date %></td>      
+      <td><%= f.time_field :start_time %></td>      
+      <td><%= f.time_field :finish %></td>
+      <td><%= f.number_field :break %></td>      
+      <td><%= f.submit %></td>
+      <td></td>      
+      <td></td>
+    <% end %>                    
+  </tr>
+</table>
