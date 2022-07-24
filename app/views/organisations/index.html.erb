@@ -1,0 +1,17 @@
+<table>
+  <% if @organisations.length == 0 %>
+    <tr>
+      <td>There is no organisation. Create one with the form below</td>
+    </tr>
+  <% else %>
+    <% @organisations.each do |organisation| %>
+      <tr>
+        <td><%= organisation.name %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  <% end %>
+
+
+</table>
