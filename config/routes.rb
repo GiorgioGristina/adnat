@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   
   root to: "organisations#index"
   resources :organisations, except: [ :new ] do
-    
+    resources :employments, only: [ :create ]
   end
+  
+  resources :employments, only: [ :destroy ]
 
   
 end
