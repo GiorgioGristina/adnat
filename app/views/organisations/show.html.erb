@@ -24,16 +24,16 @@
     </tr>   
   <% end %>
 
-  <tr>
-    <%= form_for([@organisation, @shift]) do |f| %>
-      <td><%= current_user.full_name %></td>
-      <td><%= f.date_field :start_date %></td>      
-      <td><%= f.time_field :start_time %></td>      
-      <td><%= f.time_field :finish %></td>
-      <td><%= f.number_field :break %></td>      
-      <td><%= f.submit %></td>
-      <td></td>      
-      <td></td>
-    <% end %>                    
-  </tr>
+  <
+  
 </table>
+    <%= form_for([@organisation, @shift]) do |f| %>
+      <%= current_user.full_name %>
+      <%= f.date_field :start_date %>      
+      <%= f.time_field :start_time %>      
+      <%= f.time_field :finish %>
+      <%= f.number_field :break %>      
+      <%= f.submit  %>
+            
+      
+    <% end %>                    

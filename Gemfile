@@ -29,8 +29,10 @@ gem "jbuilder"
 
 # Devise to add user table and authentication
 gem "devise"
+
 # Use faker gem for fake date
 gem 'faker'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
