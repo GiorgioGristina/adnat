@@ -33,6 +33,9 @@ gem "devise"
 # Use faker gem for fake date
 gem 'faker'
 
+#adding scss
+gem "sassc-rails"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

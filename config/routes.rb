@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
   
   resources :employments, only: [ :destroy ]
-  resources :shifts, only: [:edit, :update, :destroy ]
+  resources :shifts, only: [:edit, :update ]
   
 end

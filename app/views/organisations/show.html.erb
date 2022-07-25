@@ -1,39 +1,43 @@
-<h1><%= @organisation.name %><h1>
+<div class="container">
+  <h1><%= @organisation.name %><h1>
 
-<p>Shifts</p>
+  <p>Shifts</p>
 
-<table>
-  <tr>
-    <th>Employ name</th>
-    <th>Shift date</td>      
-    <th>Start Time</th>
-    <th>Finish Time</th>      
-    <th>Break length (minutes)</th>
-    <th>Hours worked</th>      
-    <th>Shift cost</th>                    
-  </tr>
-  <% @shifts.each do |shift| %>
+  <table>
     <tr>
-      <td><%= shift.user.full_name %></td>
-      <td><%= shift.get_date %></td>      
-      <td><%= shift.get_start_time %></td>      
-      <td><%= shift.get_finish_time %></td>
-      <td><%= shift.break %></td>      
-      <td><%= shift.hours_worked %></td>
-      <td><%= shift.shift_cost.round(2) %></td>                        
-    </tr>   
-  <% end %>
+      <th>Employ name</th>
+      <th>Shift date</td>      
+      <th>Start Time</th>
+      <th>Finish Time</th>      
+      <th>Break length (minutes)</th>
+      <th>Hours worked</th>      
+      <th>Shift cost</th>                    
+    </tr>
+    <% @shifts.each do |shift| %>
+      <tr>
+        <td><%= shift.user.full_name %></td>
+        <td><%= shift.get_date %></td>      
+        <td><%= shift.get_start_time %></td>      
+        <td><%= shift.get_finish_time %></td>
+        <td><%= shift.break %></td>      
+        <td><%= shift.hours_worked %></td>
+        <td><%= shift.shift_cost.round(2) %></td>
+       
+  </td>                        
+      </tr>   
+    <% end %>
 
-  <
-  
-</table>
-    <%= form_for([@organisation, @shift]) do |f| %>
-      <%= current_user.full_name %>
-      <%= f.date_field :start_date %>      
-      <%= f.time_field :start_time %>      
-      <%= f.time_field :finish %>
-      <%= f.number_field :break %>      
-      <%= f.submit  %>
-            
-      
-    <% end %>                    
+    
+    
+  </table>
+      <%= form_for([@organisation, @shift]) do |f| %>
+        <%= current_user.full_name %>
+        <%= f.date_field :start_date, class: "input" %>      
+        <%= f.time_field :start_time, class: "input" %>      
+        <%= f.time_field :finish, class: "input" %>
+        <%= f.number_field :break, class: "input" %>      
+        <%= f.submit class: 'button'  %>
+              
+        
+      <% end %>  
+</div>                  
