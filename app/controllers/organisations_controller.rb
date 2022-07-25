@@ -1,5 +1,5 @@
 class OrganisationsController < ApplicationController
-  before_action :find_organisation, only: [:show, :edit, :update]
+  before_action :find_organisation, only: [:show, :edit, :update, :destroy]
   
 
 
@@ -34,6 +34,12 @@ class OrganisationsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy  
+     
+    @organisation.destroy
+    redirect_to organisations_path, status: :see_other
   end
 
   

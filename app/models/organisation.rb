@@ -1,6 +1,6 @@
 class Organisation < ApplicationRecord
-  has_many :shifts
-  has_many :employments
+  has_many :shifts, dependent: :destroy
+  has_many :employments, dependent: :destroy
   has_many :users, through: :employments
 
   validates :name, :hourly_rate, presence: true
