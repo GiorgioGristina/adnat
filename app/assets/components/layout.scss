@@ -1,12 +1,21 @@
 // styling organisation index page
-.organisation-container{
-  width: 40%;
-  margin: 20px auto;
-}
+// .organisation-container{
+//   // width: 40%;
+//   margin: 40px 0;
+// }
 
 
-.flex-column{
+.flex-space-between{
   display: flex;
-  flex-direction: column;
-  color: green;
+  justify-content: space-between;
+  align-items: center;
 }
+
+
+
+
+table{
+  width: 100%;
+}
+
+

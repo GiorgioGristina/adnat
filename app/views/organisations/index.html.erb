@@ -1,24 +1,25 @@
 <div class="container">
-  <section class="organisation-container">
+ 
     <%= link_to 'edit user detail',  edit_user_registration_path, class: "user-details" %>
       <% if @organisations.length == 0 %>
           <div>There is no organisation. Create one with the form below</div>
       <% else %>
-    `<table>
-        <% @organisations.each do |organisation| %>
-          <%= render "organisations", organisation: organisation %>
-        <% end %>
+        <table>
+          <% @organisations.each do |organisation| %>
+            <%= render "organisations", organisation: organisation %>
+          <% end %>
 
-      </table>
+        </table>
       <% end %>
 
 
-  </section>
+  
 
 
   <%# form to create organization %>
 
   <section class="container-form">
+  <h2>Create organisation</h2>
     <%= form_for(@organisation)   do |f| %>
       <div class= "input-field">
         <%= f.label :name, class: "label" %>
