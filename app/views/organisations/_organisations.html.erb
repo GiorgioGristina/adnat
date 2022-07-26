@@ -1,11 +1,11 @@
 <% @employment = Employment.find_by(user: current_user, organisation: organisation) %>
-<tr>
-  <td><%= organisation.name %></td> 
-  <td><%= link_to "Edit", edit_organisation_path(organisation) %></td>  
+
+  <div class="table-cell"><%= organisation.name %></div> 
+  <div class="table-cell"><%= link_to "Edit", edit_organisation_path(organisation) %></div>  
   <% if @employment %>
-    <td><%= link_to "View Shifts", organisation %></td> 
-    <td><%= link_to "Leave", employment_path(@employment), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the organisation?"} %></td> 
+    <div class="table-cell"><%= link_to "View Shifts", organisation %></div> 
+    <div class="table-cell"><%= link_to "Leave", employment_path(@employment), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the organisation?"} %></div> 
   <% else %>
-    <td><%= link_to "Join", organisation_employments_path(organisation), data: {turbo_method: :post} %></td> 
+    <div class="table-cell"><%= link_to "Join", organisation_employments_path(organisation), data: {turbo_method: :post} %></div> 
+    <div class="table-cell"></div>
   <% end %>
-</tr>

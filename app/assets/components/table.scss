@@ -1,0 +1,26 @@
+.table-container{
+  display: table;
+  border: 1px solid black;
+  width: 100%;
+}
+
+
+.row{
+  display: table-row;
+  
+}
+
+
+.table-header{
+  display: table-cell;
+  border: 1px solid black;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+
+.table-cell{
+  display: table-cell;
+  align-items: center;
+  border: 1px solid black;
+  padding: 8px 16px;
+}

@@ -1,43 +1,41 @@
 <div class="container">
   <h1><%= @organisation.name %><h1>
 
-  <p>Shifts</p>
+  <h3 class="vertical-margin">Shifts</h3>
 
-  <table>
-    <tr>
-      <th>Employ name</th>
-      <th>Shift date</td>      
-      <th>Start Time</th>
-      <th>Finish Time</th>      
-      <th>Break length (minutes)</th>
-      <th>Hours worked</th>      
-      <th>Shift cost</th>                    
-    </tr>
+  <div class="table-container">
+    <div class="row">
+      <div class="table-header">Employ name</div>
+      <div class="table-header">Shift date</div>      
+      <div class="table-header">Start Time</div>
+      <div class="table-header">Finish Time</div>      
+      <div class="table-header">Break lengdiv (minutes)</div>
+      <div class="table-header">Hours worked</div>      
+      <div class="table-header">Shift cost</div>                    
+    </div>
     <% @shifts.each do |shift| %>
-      <tr>
-        <td><%= shift.user.full_name %></td>
-        <td><%= shift.get_date %></td>      
-        <td><%= shift.get_start_time %></td>      
-        <td><%= shift.get_finish_time %></td>
-        <td><%= shift.break %></td>      
-        <td><%= shift.hours_worked %></td>
-        <td><%= shift.shift_cost.round(2) %></td>
-       
-  </td>                        
-      </tr>   
+      <div class="row">
+        <div class="table-cell"><%= shift.user.full_name %></div>
+        <div class="table-cell"><%= shift.get_date %></div>     
+        <div class="table-cell"><%= shift.get_start_time %></div>      
+        <div class="table-cell"><%= shift.get_finish_time %></div>
+        <div class="table-cell"><%= shift.break %></div>      
+        <div class="table-cell"><%= shift.hours_worked %></div>
+        <div class="table-cell"><%= shift.shift_cost.round(2) %></div>                          
+      </div>   
     <% end %>
 
     
-    
-  </table>
-      <%= form_for([@organisation, @shift]) do |f| %>
-        <%= current_user.full_name %>
-        <%= f.date_field :start_date, class: "input" %>      
-        <%= f.time_field :start_time, class: "input" %>      
-        <%= f.time_field :finish, class: "input" %>
-        <%= f.number_field :break, class: "input" %>      
-        <%= f.submit class: 'button'  %>
-              
-        
-      <% end %>  
+      <%= form_for([@organisation, @shift], html: {class: "row"}) do |f| %>
+          <div class="table-cell"><%= current_user.full_name %></div>
+          <div class="table-cell"><%= f.date_field :start_date, class: "input" %></div>      
+          <div class="table-cell"><%= f.time_field :start_time, class: "input" %></div>      
+          <div class="table-cell"><%= f.time_field :finish, class: "input" %></div>
+          <div class="table-cell"><%= f.number_field :break, class: "input" %></div>      
+          <div class="table-cell"><%= f.submit class: 'button'  %></div>
+          <div class="table-cell"></div>       
+      <% end %>
+  </div>
+
+  <%= link_to 'Back to organisations', organisations_path %>
 </div>                  
