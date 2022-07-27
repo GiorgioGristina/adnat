@@ -29,7 +29,7 @@
  yarn install
  ```
 
- Run these commands to create data base, migrate the schema's table and create fake date from the seed file: 
+ Run these commands to create data-base, migrate the schema's table and create fake date from the seed file: 
 
  ```
  rails db:create db:migrate db:seed
