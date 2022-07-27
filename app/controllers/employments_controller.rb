@@ -5,7 +5,6 @@ class EmploymentsController < ApplicationController
     @employment = Employment.new(user:current_user, organisation: @organisation)
     if @employment.save
       redirect_to organisations_path
-
     else
       render "organisations/index", status: :unprocessable_entity
     end

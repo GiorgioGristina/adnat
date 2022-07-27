@@ -8,7 +8,7 @@ class ShiftsController < ApplicationController
     if @shift.save
       redirect_to organisation_path(@organisation)
     else
-      render "organisations/show"
+      render "organisations/show", status: :unprocessable_entity
     end    
   end
 

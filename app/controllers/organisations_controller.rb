@@ -1,7 +1,5 @@
 class OrganisationsController < ApplicationController
   before_action :find_organisation, only: [:show, :edit, :update, :destroy]
-  
-
 
   def index
     @organisations = Organisation.all
@@ -9,7 +7,6 @@ class OrganisationsController < ApplicationController
   end
 
   def show
-    @organisation = Organisation.find(params[:id])
     @shifts = Shift.where(organisation: @organisation.id).order(start: :desc)
     @shift = Shift.new()
   end
@@ -23,8 +20,6 @@ class OrganisationsController < ApplicationController
     end
   end
 
-
-
   def edit     
   end
 
@@ -36,14 +31,11 @@ class OrganisationsController < ApplicationController
     end
   end
 
-  def destroy  
-     
+  def destroy      
     @organisation.destroy
     redirect_to organisations_path, status: :see_other
   end
-
   
-
   private
 
   def organisation_params
